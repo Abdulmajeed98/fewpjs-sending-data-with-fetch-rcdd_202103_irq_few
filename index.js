@@ -1,5 +1,5 @@
 // Add your code here
-function postData( name, email ) {
+function submitData( name, email ) {
   return fetch( 'http://localhost:3000/users', {
       method: "POST",
       headers: {
@@ -11,11 +11,13 @@ function postData( name, email ) {
         email
       } )
     } )
-    .then( response => response.json())
-    .then( object => {
+    .then( function ( response ) {
+      return response.json()
+    } )
+    .then( function ( object ) {
       document.body.innerHTML = object[ "id" ]
     } )
-    .catch( error => {
+    .catch( function ( error ) {
       document.body.innerHTML = error.message
     } )
 }
