@@ -11,8 +11,7 @@ function postData( name, email ) {
         email
       } )
     } )
-    .then(  ( response ) => response.json()
-     )
+    .then( response => response.json())
     .then( object => {
       document.body.innerHTML = object[ "id" ]
     } )
